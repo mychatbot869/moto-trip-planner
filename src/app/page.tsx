@@ -137,7 +137,6 @@ function Landing() {
 
               <div className="p-5">
                 <div className="relative aspect-video overflow-hidden rounded-2xl border border-zinc-800/60 bg-black">
-                  {/* Note: replace this with your own file in /public/videos/hero.mp4 if desired */}
                   <video
                     className="h-full w-full object-cover opacity-95"
                     autoPlay
@@ -145,7 +144,7 @@ function Landing() {
                     loop
                     playsInline
                     preload="metadata"
-                    src="https://www.w3schools.com/html/mov_bbb.mp4"
+                    src="/media/hero.mp4"
                   />
                 </div>
 
