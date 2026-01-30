@@ -1,27 +1,90 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
-  --foreground: #f4f4f5;
+  --background: #030303;
+  --foreground: #fafafa;
+  --glass-bg: rgba(24, 24, 27, 0.6);
+  --glass-border: rgba(63, 63, 70, 0.4);
+  --glass-highlight: rgba(255, 255, 255, 0.05);
+  --orange-glow: rgba(249, 115, 22, 0.15);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
-    "Segoe UI Emoji";
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 body {
   color: var(--foreground);
   background:
-    radial-gradient(1200px 800px at 20% 10%, rgba(249, 115, 22, 0.18), transparent 60%),
-    radial-gradient(900px 700px at 90% 20%, rgba(234, 88, 12, 0.12), transparent 55%),
-    radial-gradient(1000px 800px at 60% 90%, rgba(249, 115, 22, 0.08), transparent 60%),
+    radial-gradient(ellipse 1400px 900px at 15% 5%, rgba(249, 115, 22, 0.12), transparent 50%),
+    radial-gradient(ellipse 1000px 800px at 85% 15%, rgba(251, 146, 60, 0.08), transparent 45%),
+    radial-gradient(ellipse 1200px 1000px at 50% 100%, rgba(249, 115, 22, 0.06), transparent 50%),
     var(--background);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   color: inherit;
+}
+
+/* Glass morphism utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-subtle {
+  background: rgba(24, 24, 27, 0.4);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(63, 63, 70, 0.3);
+}
+
+/* Premium input styling */
+input, textarea, select {
+  background: rgba(9, 9, 11, 0.8);
+  border: 1px solid rgba(63, 63, 70, 0.5);
+  transition: all 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: rgba(249, 115, 22, 0.5);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(161, 161, 170, 0.6);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(63, 63, 70, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(82, 82, 91, 0.7);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(249, 115, 22, 0.3);
+  color: #fafafa;
 }
