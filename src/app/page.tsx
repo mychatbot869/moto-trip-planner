@@ -182,9 +182,18 @@ function Landing() {
               />
 
               <div className="grid gap-4 lg:grid-cols-3">
-                <FeatureCard title="Trips" desc="Create rides with meeting points, rules, visibility, and quick join/leave." />
-                <FeatureCard title="Groups" desc="Create or join groups, manage membership, and keep group rides organized." />
-                <FeatureCard title="Profile + Garage" desc="Add your motorcycles, track engine size, and match rides automatically." />
+                <FeatureCard
+                  title="Trips"
+                  desc="Create rides with meeting points, rules, visibility, and quick join/leave."
+                />
+                <FeatureCard
+                  title="Groups"
+                  desc="Create or join groups, manage membership, and keep group rides organized."
+                />
+                <FeatureCard
+                  title="Profile + Garage"
+                  desc="Add your motorcycles, track engine size, and match rides automatically."
+                />
               </div>
 
               <Section
@@ -242,6 +251,7 @@ function Dashboard({ name }: { name: string }) {
   const db = loadDB();
   const me = db.session.currentUserId!;
 
+  // Keep "now" stable for this render session (avoids react-hooks/purity lint).
   const [now] = React.useState(() => Date.now());
   const sevenDaysFromNow = now + 7 * 24 * 60 * 60 * 1000;
 

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { useState } from 'react';
 import NavPill from '@/components/ui/NavPill';
 import GlowButton from '@/components/ui/GlowButton';
@@ -10,10 +10,14 @@ import { DEV_BYPASS_AUTH, loadDB, logout } from '@/lib/storage';
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const router = useRouter();
+  const pathname = usePathname();
   const db = loadDB();
   const isAuthed = Boolean(db.session.currentUserId);
   const me = db.users.find((u) => u.id === db.session.currentUserId);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Full-bleed pages (no max-width constraint)
+  const isFullBleed = pathname === '/' && !isAuthed;
 
   return (
     <div className="min-h-screen text-zinc-100">
@@ -98,11 +102,11 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       </header>
 
       {/* Main content */}
-      <main className="mx-auto max-w-5xl px-4 py-8 sm:py-10">{children}</main>
+      <main className={isFullBleed ? '' : 'mx-auto max-w-5xl px-4 py-8 sm:py-10'}>{children}</main>
 
       {/* Footer */}
-      <footer className="border-t border-zinc-900/50 bg-zinc-950/50">
-        <div className="mx-auto max-w-5xl px-4 py-6">
+      <footer className={`border-t border-zinc-900/50 ${isFullBleed ? 'bg-zinc-950' : 'bg-zinc-950/50'}`}>
+        <div className={`${isFullBleed ? 'max-w-7xl' : 'max-w-5xl'} mx-auto px-4 py-6`}>
           <div className="flex flex-col items-center justify-between gap-3 text-xs text-zinc-600 sm:flex-row">
             <div className="flex items-center gap-2">
               <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
