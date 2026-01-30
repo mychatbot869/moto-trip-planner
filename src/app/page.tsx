@@ -54,21 +54,40 @@ function Landing() {
   const testimonials = [
     {
       quote:
-        'Weekly figures now settle themselves. Our tree stays clean and we stop losing hours to spreadsheets.',
-      name: 'Operator',
-      title: 'Multi-tier network',
+        'We used it to coordinate a weekend ride in minutes—everyone knew the plan and joined instantly.',
+      name: 'Rider',
+      title: 'Crew organizer',
     },
     {
       quote:
-        'Mobile-first is real here. Agents can move lines and adjust players instantly without friction.',
-      name: 'Agent',
-      title: 'Admin + Live ops',
-    },
-    {
-      quote:
-        'Everything feels like a system: fast, dark, and intentional. The UI sells the product.',
+        'The UI feels premium. Trips, groups, and profiles are exactly what an MVP needs—no fluff.',
       name: 'Founder',
-      title: 'Product + design',
+      title: 'MVP launch',
+    },
+    {
+      quote:
+        'Mobile-first is legit. I can check details, share links, and keep the crew aligned on the go.',
+      name: 'Member',
+      title: 'Mobile user',
+    },
+  ];
+
+  const faqs = [
+    {
+      q: 'Is this a real product already?',
+      a: 'This is an MVP. The core flows (auth, trips, groups, profiles) work and the UI is built to feel like a production app.',
+    },
+    {
+      q: 'Where is the data stored?',
+      a: 'Right now it’s local-first (browser storage). That keeps the demo fast and simple. The UI is ready for a real backend later.',
+    },
+    {
+      q: 'Can I share a trip with my group?',
+      a: 'Yes. You can create trips, link them to a group, and members can join/leave from the trip page.',
+    },
+    {
+      q: 'What’s included in the MVP?',
+      a: 'Trips, Groups, Profile (garage), visibility rules, and a polished home experience. No payments, no complex onboarding yet.',
     },
   ];
 
@@ -77,58 +96,58 @@ function Landing() {
       <BackgroundBoxes />
       <Spotlight color="rgba(249, 115, 22, 0.28)" />
 
-      {/* Top: Wagerbabe-style hero */}
+      {/* Top: MVP hero (wagerbabe-inspired aesthetics, moto content) */}
       <div className="relative px-6 py-10 sm:px-10 sm:py-16">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2">
-              <Badge variant="orange">SYSTEM STATUS: OPERATIONAL</Badge>
-              <span className="font-mono text-[11px] text-zinc-400">PROTOCOL_V2 • AUTONOMOUS • SYSTEM_SECURE</span>
+              <Badge variant="orange">MVP STATUS: LIVE</Badge>
+              <span className="font-mono text-[11px] text-zinc-400">MOBILE_FIRST • FAST_UI • LOCAL_FIRST</span>
             </div>
-            <div className="font-mono text-[11px] text-zinc-500">ESTABLISHED 2025</div>
+            <div className="font-mono text-[11px] text-zinc-500">Moto Trip Planner</div>
           </div>
 
           <div className="mt-8 grid items-start gap-10 lg:grid-cols-2">
             <div className="space-y-6">
-              <div className="font-mono text-xs tracking-[0.2em] text-zinc-400">EMPOWERING MULTI-TIER NETWORKS</div>
+              <div className="font-mono text-xs tracking-[0.2em] text-zinc-400">BUILT FOR MOTORCYCLE CREWS</div>
 
               <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-6xl">
-                Upgrade your <span className="text-orange-400">PPH</span>.
-                <span className="block">Modernize your book.</span>
+                Plan rides.
+                <span className="block text-orange-400">Coordinate crews.</span>
               </h1>
 
               <p className="max-w-xl text-base text-zinc-300">
-                Legacy platforms are holding you back. Moto Trip Planner is a premium, fast UI shell for coordinating crews,
-                trips, and groups — built to feel like a high-performance product.
+                A premium MVP for motorcycle trip planning: create trips, manage groups, and keep a garage-ready profile.
+                Fast local demo today—ready for a real backend later.
               </p>
 
               <div className="flex flex-wrap items-center gap-3">
                 <Link href="/auth">
-                  <GlowButton>Launch system</GlowButton>
+                  <GlowButton>Get started</GlowButton>
                 </Link>
                 <Link href="/trips">
-                  <GlowButton variant="secondary">View trips</GlowButton>
+                  <GlowButton variant="secondary">Browse trips</GlowButton>
                 </Link>
                 <Link href="/groups">
-                  <GlowButton variant="secondary">View groups</GlowButton>
+                  <GlowButton variant="secondary">Browse groups</GlowButton>
                 </Link>
               </div>
 
               <div className="grid gap-3 sm:grid-cols-3">
                 <GlowCard hover={false} glow={false} className="p-4">
-                  <div className="font-mono text-[11px] text-zinc-500">LATENCY</div>
-                  <div className="mt-1 text-lg font-semibold text-white">&lt; 50ms</div>
-                  <div className="mt-1 text-xs text-zinc-500">Instant flows</div>
+                  <div className="font-mono text-[11px] text-zinc-500">FLOW</div>
+                  <div className="mt-1 text-lg font-semibold text-white">Fast</div>
+                  <div className="mt-1 text-xs text-zinc-500">No friction</div>
                 </GlowCard>
                 <GlowCard hover={false} glow={false} className="p-4">
-                  <div className="font-mono text-[11px] text-zinc-500">UPTIME</div>
-                  <div className="mt-1 text-lg font-semibold text-white">99.99%</div>
-                  <div className="mt-1 text-xs text-zinc-500">Always-on feel</div>
+                  <div className="font-mono text-[11px] text-zinc-500">UI</div>
+                  <div className="mt-1 text-lg font-semibold text-white">Premium</div>
+                  <div className="mt-1 text-xs text-zinc-500">Dark + orange</div>
                 </GlowCard>
                 <GlowCard hover={false} glow={false} className="p-4">
-                  <div className="font-mono text-[11px] text-zinc-500">SYSTEM</div>
-                  <div className="mt-1 text-lg font-semibold text-white">LOCAL</div>
-                  <div className="mt-1 text-xs text-zinc-500">Fast demo mode</div>
+                  <div className="font-mono text-[11px] text-zinc-500">DATA</div>
+                  <div className="mt-1 text-lg font-semibold text-white">Local</div>
+                  <div className="mt-1 text-xs text-zinc-500">Demo-ready</div>
                 </GlowCard>
               </div>
             </div>
@@ -138,8 +157,8 @@ function Landing() {
               <div className="absolute -inset-6 rounded-[40px] bg-gradient-to-tr from-orange-500/15 via-white/5 to-transparent blur-2xl" />
               <div className="relative overflow-hidden rounded-[32px] border border-zinc-800/70 bg-zinc-950/60 shadow-[0_30px_80px_rgba(0,0,0,0.6)]">
                 <div className="flex items-center justify-between border-b border-zinc-800/60 px-5 py-4">
-                  <div className="text-sm font-medium text-white">Live Production Interface</div>
-                  <div className="font-mono text-[11px] text-zinc-400">STREAM: ON</div>
+                  <div className="text-sm font-medium text-white">Product preview</div>
+                  <div className="font-mono text-[11px] text-zinc-400">VIDEO: ON</div>
                 </div>
 
                 <div className="p-5">
@@ -158,20 +177,20 @@ function Landing() {
 
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     <GlowCard hover={false} glow={false} className="p-4">
-                      <div className="font-mono text-[11px] text-zinc-500">SYSTEM</div>
-                      <div className="mt-1 text-sm text-white">ADMIN</div>
-                      <div className="mt-1 text-xs text-zinc-500">Weekly figures • Credits • Line moves</div>
+                      <div className="font-mono text-[11px] text-zinc-500">TRIPS</div>
+                      <div className="mt-1 text-sm text-white">Create + join</div>
+                      <div className="mt-1 text-xs text-zinc-500">Visibility • rules • group link</div>
                     </GlowCard>
                     <GlowCard hover={false} glow={false} className="p-4">
-                      <div className="font-mono text-[11px] text-zinc-500">SYSTEM</div>
-                      <div className="mt-1 text-sm text-white">LIVE</div>
-                      <div className="mt-1 text-xs text-zinc-500">Mobile-first • Instant actions</div>
+                      <div className="font-mono text-[11px] text-zinc-500">GROUPS</div>
+                      <div className="mt-1 text-sm text-white">Organize crews</div>
+                      <div className="mt-1 text-xs text-zinc-500">Members • public/private</div>
                     </GlowCard>
                   </div>
 
                   <div className="mt-4 flex items-center justify-between rounded-2xl border border-zinc-800/70 bg-black/30 px-4 py-3">
                     <div className="font-mono text-[11px] text-zinc-400">SYSTEM_STATUS: ONLINE</div>
-                    <div className="font-mono text-[11px] text-zinc-500">ALGORITHM: LINEAR_REGRESSION_V4</div>
+                    <div className="font-mono text-[11px] text-zinc-500">BUILD: MVP</div>
                   </div>
                 </div>
               </div>
@@ -179,107 +198,82 @@ function Landing() {
           </div>
         </div>
 
-        {/* Mid: sections (wagerbabe vibe) */}
+        {/* Mid: MVP sections */}
         <div className="mx-auto mt-14 max-w-6xl">
           <TracingBeam>
             <div className="space-y-10">
               <Section
-                eyebrow="Resource Allocation"
-                title="Pick a hand. Play to win."
-                desc="Flexible tiers designed to match your current scale. Each package unlocks the full platform with optimized workflows."
+                eyebrow="What it does"
+                title="Everything your crew needs to get on the road"
+                desc="Clean flows for trips + groups + profiles. Designed to look and feel like a real product from day one."
               />
 
               <div className="grid gap-4 lg:grid-cols-2">
                 <GlowCard className="p-6">
                   <div className="flex items-center justify-between">
-                    <div className="text-xl font-semibold text-white">Game</div>
-                    <Badge variant="orange">SYSTEM_SECURE</Badge>
+                    <div className="text-xl font-semibold text-white">Trips</div>
+                    <Badge variant="orange">CORE</Badge>
                   </div>
                   <div className="mt-2 text-sm text-zinc-400">
-                    Fast UI foundations to ship high-touch flows. Smooth animation, high contrast, premium spacing.
+                    Create rides, share them, and let people join/leave. Keep details clear and accessible.
                   </div>
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
                     <GlowCard hover={false} glow={false} className="p-4">
-                      <div className="font-mono text-[11px] text-zinc-500">MOBILE-FIRST CORE</div>
-                      <div className="mt-1 text-sm text-white">Built for thumbs</div>
+                      <div className="font-mono text-[11px] text-zinc-500">VISIBILITY</div>
+                      <div className="mt-1 text-sm text-white">Public / private</div>
                     </GlowCard>
                     <GlowCard hover={false} glow={false} className="p-4">
-                      <div className="font-mono text-[11px] text-zinc-500">INSTANT ACTIONS</div>
-                      <div className="mt-1 text-sm text-white">Fast, frictionless</div>
+                      <div className="font-mono text-[11px] text-zinc-500">RULES</div>
+                      <div className="mt-1 text-sm text-white">Compatibility checks</div>
                     </GlowCard>
                   </div>
                 </GlowCard>
 
                 <GlowCard className="p-6">
                   <div className="flex items-center justify-between">
-                    <div className="text-xl font-semibold text-white">Admin</div>
-                    <Badge variant="orange">PROTOCOL_V2</Badge>
+                    <div className="text-xl font-semibold text-white">Groups</div>
+                    <Badge variant="orange">CORE</Badge>
                   </div>
                   <div className="mt-2 text-sm text-zinc-400">
-                    Stop using spreadsheets. Settle weekly figures, adjust players, and manage ops in one place.
+                    Organize crews with member lists and group-linked trips. Keep everything in one place.
                   </div>
                   <div className="mt-5 grid gap-3 sm:grid-cols-3">
                     <GlowCard hover={false} glow={false} className="p-4">
-                      <div className="text-xs text-zinc-400">Weekly figures</div>
-                      <div className="mt-1 text-sm text-white">Instant totals</div>
+                      <div className="text-xs text-zinc-400">Members</div>
+                      <div className="mt-1 text-sm text-white">Invite + manage</div>
                     </GlowCard>
                     <GlowCard hover={false} glow={false} className="p-4">
-                      <div className="text-xs text-zinc-400">Adjustments</div>
-                      <div className="mt-1 text-sm text-white">One-click credits</div>
+                      <div className="text-xs text-zinc-400">Trips</div>
+                      <div className="mt-1 text-sm text-white">Linked rides</div>
                     </GlowCard>
                     <GlowCard hover={false} glow={false} className="p-4">
-                      <div className="text-xs text-zinc-400">Line control</div>
-                      <div className="mt-1 text-sm text-white">Global / local</div>
+                      <div className="text-xs text-zinc-400">Privacy</div>
+                      <div className="mt-1 text-sm text-white">Public/private</div>
                     </GlowCard>
                   </div>
                 </GlowCard>
               </div>
 
               <Section
-                eyebrow="Automated Protection"
-                title="Pattern recognition to protect your margins"
-                desc="Bot detection, sharp analysis, auto hedging — presented in a clean operator-grade UI."
+                eyebrow="Testimonials"
+                title="Built to feel real"
+                desc="A premium UI shell that communicates product quality—perfect for an MVP demo." 
               />
 
-              <div className="rounded-3xl border border-zinc-800/70 bg-zinc-950/50 p-6">
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <div className="font-mono text-xs text-zinc-400">SYSTEM ARCHITECTURE: CLASSIFIED</div>
-                  <div className="font-mono text-xs text-zinc-500">REAL-TIME RISK: ACTIVE</div>
-                </div>
-                <div className="mt-4 grid gap-4 sm:grid-cols-3">
-                  <FeatureCard title="Bot Detection" desc="Detect abnormal patterns and scripted behavior." />
-                  <FeatureCard title="Auto Hedging" desc="Minimize exposure with defensive actions." />
-                  <FeatureCard title="Sharp Analysis" desc="Identify high-skill bettors and protect edges." />
-                </div>
-              </div>
+              <InfiniteMovingCards items={testimonials} speed="normal" className="mt-2" />
 
               <Section
-                eyebrow="Global Scale"
-                title="Zero latency feel"
-                desc="A decentralized vibe: the UI stays responsive and fast regardless of context."
+                eyebrow="FAQ"
+                title="Questions, answered"
+                desc="Quick clarity on what this MVP is (and what it isn’t yet)."
               />
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <GlowCard className="p-6">
-                  <div className="text-3xl font-semibold text-white">99.99%</div>
-                  <div className="mt-1 text-sm text-zinc-400">Uptime guarantee</div>
-                </GlowCard>
-                <GlowCard className="p-6">
-                  <div className="text-3xl font-semibold text-white">50ms</div>
-                  <div className="mt-1 text-sm text-zinc-400">Global latency target</div>
-                </GlowCard>
-              </div>
-
-              <div className="mt-2">
-                <InfiniteMovingCards items={testimonials} speed="normal" className="mt-2" />
-              </div>
+              <FAQ items={faqs} />
 
               <div className="flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-zinc-800/70 bg-zinc-950/60 px-6 py-6">
                 <div>
-                  <div className="text-lg font-semibold text-white">Ready to scale?</div>
-                  <div className="mt-1 text-sm text-zinc-400">
-                    Join the network of crews who upgraded their infrastructure.
-                  </div>
+                  <div className="text-lg font-semibold text-white">Ready to try it?</div>
+                  <div className="mt-1 text-sm text-zinc-400">Create an account and start a trip in seconds.</div>
                 </div>
                 <div className="flex items-center gap-2">
                   <Link href="/auth">
@@ -292,7 +286,7 @@ function Landing() {
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
-                <div className="font-mono text-[11px] text-zinc-500">WagerBabe → Moto Trip Planner UI variant</div>
+                <div className="font-mono text-[11px] text-zinc-500">Moto Trip Planner • MVP</div>
                 <div className="font-mono text-[11px] text-zinc-500">SYSTEM STATUS: OPERATIONAL</div>
               </div>
             </div>
@@ -321,8 +315,35 @@ function FeatureCard({ title, desc }: { title: string; desc: string }) {
         <span className="rounded-full border border-zinc-800 bg-black/30 px-2.5 py-1 text-xs text-zinc-300">Included</span>
       </div>
       <div className="mt-2 text-sm text-zinc-400">{desc}</div>
-      <div className="mt-5 text-sm text-orange-400">Explore →</div>
     </GlowCard>
+  );
+}
+
+function FAQ({ items }: { items: { q: string; a: string }[] }) {
+  const [open, setOpen] = React.useState<number | null>(0);
+
+  return (
+    <div className="grid gap-3">
+      {items.map((it, idx) => {
+        const isOpen = open === idx;
+        return (
+          <button
+            key={it.q}
+            type="button"
+            onClick={() => setOpen((prev) => (prev === idx ? null : idx))}
+            className="text-left rounded-2xl border border-zinc-800/70 bg-zinc-950/50 px-5 py-4 hover:bg-zinc-950/60 transition"
+          >
+            <div className="flex items-center justify-between gap-4">
+              <div className="text-sm font-semibold text-white">{it.q}</div>
+              <div className="font-mono text-xs text-zinc-500">{isOpen ? '−' : '+'}</div>
+            </div>
+            {isOpen ? (
+              <div className="mt-2 text-sm text-zinc-400 leading-relaxed">{it.a}</div>
+            ) : null}
+          </button>
+        );
+      })}
+    </div>
   );
 }
 
