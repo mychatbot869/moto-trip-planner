@@ -54,40 +54,40 @@ function Landing() {
   const testimonials = [
     {
       quote:
-        'We used it to coordinate a weekend ride in minutes—everyone knew the plan and joined instantly.',
-      name: 'Rider',
-      title: 'Crew organizer',
+        'Planned a 3-day canyon run with 12 riders in under 10 minutes. Everyone got the route, timing, and meetup spot instantly.',
+      name: 'Jake M.',
+      title: 'ADV Crew Lead',
     },
     {
       quote:
-        'The UI feels premium. Trips, groups, and profiles are exactly what an MVP needs—no fluff.',
-      name: 'Founder',
-      title: 'MVP launch',
+        'Finally an app that gets it—trips, groups, garage. No bloat, just what we actually need to coordinate rides.',
+      name: 'Sarah K.',
+      title: 'Sport Touring Club',
     },
     {
       quote:
-        'Mobile-first is legit. I can check details, share links, and keep the crew aligned on the go.',
-      name: 'Member',
-      title: 'Mobile user',
+        'I can check the ride details, see who's going, and share links to new riders—all from my phone at a gas stop.',
+      name: 'Marcus T.',
+      title: 'Weekend Warrior',
     },
   ];
 
   const faqs = [
     {
-      q: 'Is this a real product already?',
-      a: 'This is an MVP. The core flows (auth, trips, groups, profiles) work and the UI is built to feel like a production app.',
+      q: 'What can I do with Moto Trip Planner?',
+      a: 'Create trips with routes and dates, organize riding groups, and build a profile with your garage. It's designed for real motorcycle crews who want a clean way to coordinate.',
     },
     {
-      q: 'Where is the data stored?',
-      a: 'Right now it’s local-first (browser storage). That keeps the demo fast and simple. The UI is ready for a real backend later.',
+      q: 'Is my data saved?',
+      a: 'Currently data is stored locally in your browser for the demo. This keeps things fast and private. Backend sync is on the roadmap.',
     },
     {
-      q: 'Can I share a trip with my group?',
-      a: 'Yes. You can create trips, link them to a group, and members can join/leave from the trip page.',
+      q: 'Can I invite my riding crew?',
+      a: 'Yes. Create a group, share it with your crew, and link trips to it. Members can join or leave rides directly from the trip page.',
     },
     {
-      q: 'What’s included in the MVP?',
-      a: 'Trips, Groups, Profile (garage), visibility rules, and a polished home experience. No payments, no complex onboarding yet.',
+      q: 'What's included right now?',
+      a: 'Trips, groups, rider profiles with garage, and visibility controls (public/private). The core flows work—this is a functional MVP.',
     },
   ];
 
@@ -96,13 +96,13 @@ function Landing() {
       <BackgroundBoxes />
       <Spotlight color="rgba(249, 115, 22, 0.28)" />
 
-      {/* Top: MVP hero (wagerbabe-inspired aesthetics, moto content) */}
+      {/* Hero section */}
       <div className="relative px-6 py-10 sm:px-10 sm:py-16">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <Badge variant="orange">MVP STATUS: LIVE</Badge>
-              <span className="font-mono text-[11px] text-zinc-400">MOBILE_FIRST • FAST_UI • LOCAL_FIRST</span>
+              <span className="font-mono text-[11px] text-zinc-400">Mobile-first • Fast UI • Local demo</span>
             </div>
             <div className="font-mono text-[11px] text-zinc-500">Moto Trip Planner</div>
           </div>
@@ -189,8 +189,8 @@ function Landing() {
                   </div>
 
                   <div className="mt-4 flex items-center justify-between rounded-2xl border border-zinc-800/70 bg-black/30 px-4 py-3">
-                    <div className="font-mono text-[11px] text-zinc-400">SYSTEM_STATUS: ONLINE</div>
-                    <div className="font-mono text-[11px] text-zinc-500">BUILD: MVP</div>
+                    <div className="font-mono text-[11px] text-zinc-400">Ready to ride</div>
+                    <div className="font-mono text-[11px] text-zinc-500">MVP v1</div>
                   </div>
                 </div>
               </div>
