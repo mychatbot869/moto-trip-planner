@@ -2,6 +2,15 @@
 
 import React from 'react';
 
+type Star = {
+  id: number;
+  top: number;
+  left: number;
+  size: number;
+  delay: number;
+  duration: number;
+};
+
 /**
  * Glowing Stars Background inspired by Aceternity UI.
  * Subtle twinkling star effect.
@@ -13,15 +22,19 @@ export default function GlowingStars({
   number?: number;
   className?: string;
 }) {
-  const stars = React.useMemo(() => {
-    return [...Array(number)].map((_, idx) => ({
-      id: idx,
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-      size: Math.random() * 2 + 1,
-      delay: Math.random() * 3,
-      duration: Math.random() * 2 + 2,
-    }));
+  const [stars, setStars] = React.useState<Star[]>([]);
+
+  React.useEffect(() => {
+    setStars(
+      [...Array(number)].map((_, idx) => ({
+        id: idx,
+        top: Math.random() * 100,
+        left: Math.random() * 100,
+        size: Math.random() * 2 + 1,
+        delay: Math.random() * 3,
+        duration: Math.random() * 2 + 2,
+      }))
+    );
   }, [number]);
 
   return (

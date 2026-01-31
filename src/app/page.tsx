@@ -66,7 +66,7 @@ function Landing() {
     },
     {
       quote:
-        'I can check the ride details, see who's going, and share links to new riders—all from my phone at a gas stop.',
+        "I can check the ride details, see who's going, and share links to new riders—all from my phone at a gas stop.",
       name: 'Marcus T.',
       title: 'Weekend Warrior',
     },
@@ -75,7 +75,7 @@ function Landing() {
   const faqs = [
     {
       q: 'What can I do with Moto Trip Planner?',
-      a: 'Create trips with routes and dates, organize riding groups, and build a profile with your garage. It's designed for real motorcycle crews who want a clean way to coordinate.',
+      a: "Create trips with routes and dates, organize riding groups, and build a profile with your garage. It's designed for real motorcycle crews who want a clean way to coordinate.",
     },
     {
       q: 'Is my data saved?',
@@ -86,7 +86,7 @@ function Landing() {
       a: 'Yes. Create a group, share it with your crew, and link trips to it. Members can join or leave rides directly from the trip page.',
     },
     {
-      q: 'What's included right now?',
+      q: "What's included right now?",
       a: 'Trips, groups, rider profiles with garage, and visibility controls (public/private). The core flows work—this is a functional MVP.',
     },
   ];
@@ -304,18 +304,6 @@ function Section({ eyebrow, title, desc }: { eyebrow: string; title: string; des
       <div className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">{title}</div>
       <div className="max-w-3xl text-sm text-zinc-400">{desc}</div>
     </div>
-  );
-}
-
-function FeatureCard({ title, desc }: { title: string; desc: string }) {
-  return (
-    <GlowCard className="p-6">
-      <div className="flex items-center justify-between">
-        <div className="text-lg font-semibold text-white">{title}</div>
-        <span className="rounded-full border border-zinc-800 bg-black/30 px-2.5 py-1 text-xs text-zinc-300">Included</span>
-      </div>
-      <div className="mt-2 text-sm text-zinc-400">{desc}</div>
-    </GlowCard>
   );
 }
 

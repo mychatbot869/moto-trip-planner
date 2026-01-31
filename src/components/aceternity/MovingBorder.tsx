@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'motion/react';
 
 /**
  * Moving Border Button inspired by Aceternity UI.

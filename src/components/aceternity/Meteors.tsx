@@ -2,6 +2,14 @@
 
 import React from 'react';
 
+type Meteor = {
+  id: number;
+  top: number;
+  left: number;
+  delay: number;
+  duration: number;
+};
+
 /**
  * Meteors effect inspired by Aceternity UI.
  * Animated shooting stars/meteors falling diagonally.
@@ -13,14 +21,18 @@ export default function Meteors({
   number?: number;
   className?: string;
 }) {
-  const meteors = React.useMemo(() => {
-    return [...Array(number)].map((_, idx) => ({
-      id: idx,
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-      delay: Math.random() * 2,
-      duration: Math.random() * 2 + 2,
-    }));
+  const [meteors, setMeteors] = React.useState<Meteor[]>([]);
+
+  React.useEffect(() => {
+    setMeteors(
+      [...Array(number)].map((_, idx) => ({
+        id: idx,
+        top: Math.random() * 100,
+        left: Math.random() * 100,
+        delay: Math.random() * 2,
+        duration: Math.random() * 2 + 2,
+      }))
+    );
   }, [number]);
 
   return (
@@ -36,7 +48,6 @@ export default function Meteors({
             animationDuration: `${meteor.duration}s`,
           }}
         >
-          {/* Meteor trail */}
           <span
             className="absolute top-1/2 -z-10 h-px w-[50px] -translate-y-1/2"
             style={{

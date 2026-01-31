@@ -29,39 +29,40 @@ export default function InfiniteMovingCards({
   const scrollerRef = React.useRef<HTMLUListElement>(null);
   const [start, setStart] = React.useState(false);
 
-  React.useEffect(() => {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
-
-      // Duplicate items for infinite scroll
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
-      });
-
-      setAnimationDirection();
-      setAnimationSpeed();
-      setStart(true);
-    }
-  }, []);
-
-  const setAnimationDirection = () => {
+  const setAnimationDirection = React.useCallback(() => {
     if (containerRef.current) {
       containerRef.current.style.setProperty(
         '--animation-direction',
         direction === 'left' ? 'forwards' : 'reverse'
       );
     }
-  };
+  }, [direction]);
 
-  const setAnimationSpeed = () => {
+  const setAnimationSpeed = React.useCallback(() => {
     if (containerRef.current) {
       const duration = speed === 'fast' ? '20s' : speed === 'normal' ? '40s' : '80s';
       containerRef.current.style.setProperty('--animation-duration', duration);
     }
-  };
+  }, [speed]);
+
+  React.useEffect(() => {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children);
+
+      // Duplicate items for infinite scroll (only once)
+      if (scrollerRef.current.dataset.duplicated !== 'true') {
+        scrollerContent.forEach((item) => {
+          const duplicatedItem = item.cloneNode(true);
+          scrollerRef.current?.appendChild(duplicatedItem);
+        });
+        scrollerRef.current.dataset.duplicated = 'true';
+      }
+
+      setAnimationDirection();
+      setAnimationSpeed();
+      setStart(true);
+    }
+  }, [setAnimationDirection, setAnimationSpeed]);
 
   return (
     <div
